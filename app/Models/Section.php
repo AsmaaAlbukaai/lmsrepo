@@ -13,6 +13,16 @@ class Section extends Model
     protected $fillable=[
         'name',
         'photos_Id',
-
     ];
+    public function onlinecourse(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(OnLineCourse::class,'sections_Id');
+    }
+    public function roadmap(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Roadmap::class,'sections_Id');
+    }
+    public function photo():\Illuminate\Database\Eloquent\Relations\MorphOne{
+        return $this->morphOne('App\Models\Photo','imagable');
+            }
 }

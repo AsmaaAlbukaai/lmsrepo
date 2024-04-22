@@ -28,5 +28,9 @@ class OnLineCourse extends Model
     {
         return $this->belongsTo(Section::class,'sections_Id');
     }
+    public function pdf(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Pdf::class,'on_line_courses_Id');
+    }
 
 }

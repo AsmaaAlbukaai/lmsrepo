@@ -14,4 +14,8 @@ class Review extends Model
         'rate',
         'on_line_course_users_Id',
     ];
+    public function onlineuser(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(onLineCourse_user::class,'on_line_course_users_Id');
+    }
 }

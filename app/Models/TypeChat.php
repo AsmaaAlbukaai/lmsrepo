@@ -12,6 +12,5 @@ class TypeChat extends Model
     use HasApiTokens, HasFactory, Notifiable;
     protected $fillable=[
         'type',
-
     ];
 }

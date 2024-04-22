@@ -15,4 +15,8 @@ class Task extends Model
         'date',
         'on_line_courses_Id',
     ];
+    public function question(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Question::class,'tasks_Id');
+    }
 }

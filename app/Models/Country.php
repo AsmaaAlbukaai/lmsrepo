@@ -20,5 +20,9 @@ class Country extends Model
     {
         return $this->hasMany(User::class,'countries_Id');
     }
+    public function onsitecourse(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(OnSiteCourse::class,'countries_Id');
+    }
 
 }

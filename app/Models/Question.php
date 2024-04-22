@@ -18,4 +18,16 @@ class Question extends Model
         'on_line_courses_Id',
         'added_places_Id',
         ];
+        public function online(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+        {
+            return $this->belongsTo(OnLineCourse::class,'on_line_courses_Id');
+        }
+        public function task(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+        {
+            return $this->belongsTo(Task::class,'tasks_Id');
+        }
+        public function added(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+        {
+            return $this->belongsTo(Added_place::class,'added_places_Id');
+        }
 }

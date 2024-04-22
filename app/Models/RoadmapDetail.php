@@ -13,6 +13,9 @@ class RoadmapDetail extends Model
     protected $fillable=[
         'roadmaps_Id',
         'course_name',
-
     ];
+    public function roadmaps(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Roadmap::class,'roadmaps_Id');
+    }
 }

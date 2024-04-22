@@ -15,4 +15,8 @@ class ReportDetail extends Model
         'users_Id',
         'answer_num_true',
     ];
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class,'users_Id');
+    }
 }

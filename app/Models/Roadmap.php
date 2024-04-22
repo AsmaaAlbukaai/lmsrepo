@@ -15,4 +15,8 @@ class Roadmap extends Model
         'time',
         'sections_Id',
     ];
+    public function section(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Section::class,'sections_Id');
+    }
 }

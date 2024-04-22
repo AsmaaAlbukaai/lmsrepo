@@ -22,4 +22,9 @@ class City extends Model
     {
         return $this->hasMany(User::class,'cities_Id');
     }
+    public function onsitecourse(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(OnSiteCourse::class,'cities_Id');
+    }
+  
 }

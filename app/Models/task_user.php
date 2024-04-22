@@ -13,6 +13,14 @@ class task_user extends Model
     protected $fillable=[
         'tasks_Id',
         'users_Id',
-
     ];
+    public function task(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Task::class,'tasks');
+    }
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(User::class,'users',
+            'users_Id','dates_Id')->withTimestamps();
+    }
 }
